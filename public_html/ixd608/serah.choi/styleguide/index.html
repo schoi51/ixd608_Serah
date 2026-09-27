@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Styleguide</title>
+
+	<link rel="stylesheet" href="../lib/css/styleguide.css">
+	<link rel="stylesheet" href="../css/storetheme.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300..800;1,300..800&family=Instrument+Serif:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	
+	<style>
+		:root {
+			--color-primary: #3D1508;
+			--color-secondary: #C4401C;
+			--color-muted: #6B5040;
+			--color-accent: #687D4E;
+			
+			--font-serif: "Instrument Serif", Georgia, serif;
+			--font-sans: "Archivo", Helvetica, Arial, sans-serif;
+			--font-mono: "Space Mono", monospace;
+		}
+		body {
+			color: var(--color-primary);
+			font-family: var(--font-sans);
+			background-color: #fcfbf9;
+		}
+
+		.color-swatch-grid {
+			display: flex;
+			gap: 1.5rem;
+			flex-wrap: wrap;
+		}
+		.color-swatch-item {
+			flex: 1;
+			min-width: 140px;
+			border: 1px solid #dcd6cd;
+			border-radius: 0.4em;
+			background-color: #fff;
+			overflow: hidden;
+		}
+		.color-box {
+			height: 80px;
+			width: 100%;
+		}
+
+		.custom-product-grid {
+			display: flex;
+			gap: 1.5rem;
+			width: 100%;
+		}
+
+		.custom-product-col {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.figure.product {
+			border: 1px solid #dcd6cd;
+			border-radius: 0.4em;
+			background-color: #fff;
+			overflow: hidden;
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+		}
+
+		.product-placeholder {
+			width: 100%;
+			aspect-ratio: 1 / 1;
+			background-color: #ffffff;
+			border-bottom: 1px solid #dcd6cd;
+		}
+
+		.product-overlay {
+			position: relative;
+			overflow: hidden;
+		}
+
+		.product-overlay figcaption {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(61, 21, 8, 0.85);
+			opacity: 0;
+			transition: opacity 0.3s ease-in-out;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			z-index: 2;
+		}
+
+		.product-overlay:hover figcaption {
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+
+<header class="navbar" style="background-color: var(--color-primary);">
+	<div class="container display-flex">
+		<div class="flex-none">	
+			<h1 style="color: #fff;">Styleguide</h1>
+		</div>
+		<div class="flex-stretch"></div>
+		<nav class="flex-none nav">
+			<ul class="container display-flex">
+				<li><a href="#tableofcontents" style="color: #fff;">Table of Contents</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<div class="container" id="tableofcontents">
+	<h2>Table of Contents</h2>
+	<div class="card soft">
+		<nav class="nav">
+			<ul>
+				<li><a href="#colors">Colors</a></li>
+				<li><a href="#typography">Typography</a></li>
+				<li><a href="#cards">Cards</a></li>
+				<li><a href="#productgrid">Product Grid</a></li>
+				<li><a href="#productoverlay">Product Overlay</a></li>
+				<li><a href="#navigations">Navigations</a></li>
+				<li><a href="#tables">Tables</a></li>
+			</ul>	
+		</nav>
+	</div>
+</div>
+
+<div class="container" id="colors">
+	<h2>Colors</h2>
+	<div class="color-swatch-grid">
+		<div class="color-swatch-item">
+			<div class="color-box" style="background-color: #3D1508;"></div>
+			<div style="padding: 1rem;">
+				<div style="font-weight: bold; font-size: 14px;">Primary</div>
+				<div style="font-family: var(--font-mono); font-size: 12px; color: var(--color-muted);">#3D1508</div>
+			</div>
+		</div>
+		<div class="color-swatch-item">
+			<div class="color-box" style="background-color: #C4401C;"></div>
+			<div style="padding: 1rem;">
+				<div style="font-weight: bold; font-size: 14px;">Secondary</div>
+				<div style="font-family: var(--font-mono); font-size: 12px; color: var(--color-muted);">#C4401C</div>
+			</div>
+		</div>
+		<div class="color-swatch-item">
+			<div class="color-box" style="background-color: #6B5040;"></div>
+			<div style="padding: 1rem;">
+				<div style="font-weight: bold; font-size: 14px;">Muted</div>
+				<div style="font-family: var(--font-mono); font-size: 12px; color: var(--color-muted);">#6B5040</div>
+			</div>
+		</div>
+		<div class="color-swatch-item">
+			<div class="color-box" style="background-color: #687D4E;"></div>
+			<div style="padding: 1rem;">
+				<div style="font-weight: bold; font-size: 14px;">Accent</div>
+				<div style="font-family: var(--font-mono); font-size: 12px; color: var(--color-muted);">#687D4E</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container" id="typography">
+	<h2>Typography</h2>
+	<div class="card soft" id="headings">
+		<h3>Headings (Instrument Serif)</h3>
+		<h1 style="font-family: var(--font-serif); font-size: 56px;">Heading 1 — Objects worth keeping.</h1>
+		<h2 style="font-family: var(--font-serif); font-size: 42px;">Heading 2 — Furniture with a provenance.</h2>
+		<h3 style="font-family: var(--font-serif); font-size: 32px;">Heading 3 — Condition Guide</h3>
+		<h4 style="font-family: var(--font-serif); font-size: 24px;">Heading 4 — Eames-Era Lounge Chair</h4>
+		<h5 style="font-family: var(--font-serif); font-size: 18px;">Heading 5 — Authenticated Originals</h5>
+		<h6 style="font-family: var(--font-serif); font-size: 14px;">Heading 6 — Est. 2019 — New York</h6>
+	</div>
+
+	<div class="card soft" id="paragraphs">
+		<h3>Paragraphs & Body</h3>
+		<p style="font-family: var(--font-sans); font-size: 14px; line-height: 22.75px; color: var(--color-muted);">Authenticated mid-century modern furniture sourced from private collections. Each piece carries its history and unique patina.</p>
+		<p style="font-family: var(--font-mono); font-size: 13px; color: var(--color-secondary);">$1,240.00 — SKU: FM-65-TULIP</p>
+	</div>
+</div>
+
+<div class="container" id="cards">
+	<h2>Cards</h2>
+	<div class="grid gap">
+		<div class="col-xs-12 col-md-6">
+			<div class="card soft">
+				<h3>Card Soft</h3>
+				<p style="font-size: 14px; color: var(--color-muted);">Container with subtle border radius and shadow.</p>
+			</div>
+		</div>		
+		<div class="col-xs-12 col-md-6">
+			<div class="card hard">
+				<h3>Card Hard</h3>
+				<p style="font-size: 14px; color: var(--color-muted);">Container with defined solid border.</p>
+			</div>
+		</div>		
+	</div>
+</div>
+
+<div class="container" id="productgrid">
+	<h2>Product Grid</h2>
+	<div class="custom-product-grid">
+		<div class="custom-product-col">
+			<figure class="figure product">
+				<div class="product-placeholder"></div>
+				<figcaption style="padding: 1.2rem;">
+					<div style="font-weight: bold;">Eames Lounge Chair</div>
+					<div style="font-family: var(--font-mono); color: var(--color-secondary); margin-top: 0.3rem;">$1,240</div>
+				</figcaption>
+			</figure>
+		</div>
+		<div class="custom-product-col">
+			<figure class="figure product">
+				<div class="product-placeholder"></div>
+				<figcaption style="padding: 1.2rem;">
+					<div style="font-weight: bold;">Danish Teak Credenza</div>
+					<div style="font-family: var(--font-mono); color: var(--color-secondary); margin-top: 0.3rem;">$2,100</div>
+				</figcaption>
+			</figure>
+		</div>
+		<div class="custom-product-col">
+			<figure class="figure product">
+				<div class="product-placeholder"></div>
+				<figcaption style="padding: 1.2rem;">
+					<div style="font-weight: bold;">Knoll Tulip Chair</div>
+					<div style="font-family: var(--font-mono); color: var(--color-secondary); margin-top: 0.3rem;">$880</div>
+				</figcaption>
+			</figure>
+		</div>
+	</div>
+</div>
+
+<div class="container" id="productoverlay">
+	<h2>Product Overlay</h2>
+	<div class="custom-product-grid">
+		<div class="custom-product-col">
+			<figure class="figure product product-overlay">
+				<div class="product-placeholder"></div>
+				<figcaption>
+					<div style="background: #fff; color: var(--color-primary); padding: 1.5rem; border-radius: 0.3em; text-align: center; width: 80%;">
+						<div style="font-weight: bold; font-size: 16px;">Eames Lounge Chair</div>
+						<div style="font-family: var(--font-mono); color: var(--color-secondary); margin-top: 0.5rem;">$1,240</div>
+					</div>
+				</figcaption>
+			</figure>
+		</div>
+		<div class="custom-product-col">
+			<figure class="figure product product-overlay">
+				<div class="product-placeholder"></div>
+				<figcaption>
+					<div style="background: #fff; color: var(--color-primary); padding: 1.5rem; border-radius: 0.3em; text-align: center; width: 80%;">
+						<div style="font-weight: bold; font-size: 16px;">Danish Teak Credenza</div>
+						<div style="font-family: var(--font-mono); color: var(--color-secondary); margin-top: 0.5rem;">$2,100</div>
+					</div>
+				</figcaption>
+			</figure>
+		</div>
+		<div class="custom-product-col">
+			<figure class="figure product product-overlay">
+				<div class="product-placeholder"></div>
+				<figcaption>
+					<div style="background: #fff; color: var(--color-primary); padding: 1.5rem; border-radius: 0.3em; text-align: center; width: 80%;">
+						<div style="font-weight: bold; font-size: 16px;">Knoll Tulip Chair</div>
+						<div style="font-family: var(--font-mono); color: var(--color-secondary); margin-top: 0.5rem;">$880</div>
+					</div>
+				</figcaption>
+			</figure>
+		</div>
+	</div>
+</div>
+
+<div class="container" id="navigations">
+	<h2>Navigations</h2>
+	
+	<script>
+		const makeNav = (classes='') => {
+			const links = ['Collections','Seating','Storage','Tables','About'];
+			let ran = Math.floor(Math.random()*links.length); 
+			document.write(`
+				<div>
+					<nav class="${classes}">
+						<ul>
+							${links.reduce((r,o,i)=>{
+								return r+`<li class="${ran==i?'active':''}"><a href="#">${o}</a></li>`;
+							},'')}
+						</ul>
+					</nav>
+				</div>
+			`);
+		}
+	</script>
+
+	<div class="card soft">
+		<h3>Basic Nav</h3>
+		<script>makeNav('nav')</script>
+	</div>
+
+	<div class="card soft">
+		<h3>Flex Nav</h3>
+		<script>makeNav('nav nav-flex')</script>
+	</div>
+
+	<div class="card soft">
+		<h3>Pills Nav</h3>
+		<script>makeNav('nav nav-pills')</script>
+	</div>
+
+	<div class="card soft">
+		<h3>Material Nav</h3>
+		<script>makeNav('nav nav-material')</script>
+	</div>
+
+	<script>
+		$("#navigations a").on("click", function(e) {
+			e.preventDefault();
+			$(this).closest("li").addClass("active")
+			.siblings().removeClass("active");
+		})
+	</script>
+</div>
+
+<div class="container" id="tables">
+	<h2>Tables (Condition & Inventory)</h2>
+	<div class="card soft">
+		<script>
+			const makeTable = (classes='') => {
+				const head = ['Grade', 'Category', 'Description', 'Status'];
+				const body = [
+					['A', 'Museum Quality', 'No restoration required / Original finish', 'Available'],
+					['B', 'Exhibition Ready', 'Minor professional restoration / Authentic hardware', 'Available'],
+					['C', 'Character Pieces', 'Visible restoration noted / Discounted accordingly', 'Reserved']
+				];
+				return `
+				<table class="${classes}" style="width:100%; border-collapse: collapse; text-align: left;">
+					<thead>
+						<tr style="border-bottom: 2px solid var(--color-primary);">
+							${head.reduce((r,o)=>r+`<th style="padding: 10px; font-family: var(--font-mono); font-size: 12px; color: var(--color-primary);">${o}</th>`,'')}
+						</tr>
+					</thead>
+					<tbody>
+						${body.reduce((r,o,i)=>r+
+							`<tr style="border-bottom: 1px solid #eee;">${
+								o.reduce((r,cell)=>r+`<td style="padding: 10px; font-size: 14px;">${cell}</td>`,'')
+							}</tr>`,'')}
+					</tbody>
+				</table>
+				`;
+			}
+		</script>
+		<script>document.write(makeTable('nav'));</script>
+	</div>
+</div>
+
+</body>
+</html>
