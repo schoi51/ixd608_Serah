@@ -133,6 +133,10 @@
 				<li><a href="#productoverlay">Product Overlay</a></li>
 				<li><a href="#navigations">Navigations</a></li>
 				<li><a href="#tables">Tables</a></li>
+				<li><a href="#forms">Forms</a></li>
+				<ul>
+					<li><a href="#inputs">Inputs</a></li>
+				</ul>
 			</ul>	
 		</nav>
 	</div>
@@ -363,5 +367,132 @@
 	</div>
 </div>
 
+
+<div class="container" id="forms">
+	<h2>Forms</h2>
+
+	<h2>Inputs</h2>
+	<div class="card soft">
+		<h3>Default Inputs</h3>
+		<form>
+			<input type="text"><br>
+			<input type="number"><br>
+			<input type="password"><br>
+			<input type="url"><br>
+			<input type="email"><br>
+			<input type="datetime-local"><br>
+			<input type="date"><br>
+			<input type="search"><br>
+		</form>
+
+		<h3>Form Input</h3>
+		<form>
+			<input type="text" class="form-input" placeholder="Text input">
+		</form>
+	</div>
+
+	<h2 id="buttons">Buttons</h2>
+	<div class="card soft">
+		<h3>Default Buttons</h3>
+		<button>Button</button>
+
+		<h3>Form Buttons</h3>
+		<div class="form-control">
+			<button type="button" class="form-button">Button</button>
+		</div>
+		<div class="form-control">
+			<input type="button" class="form-button" value="Input">
+		</div>
+		<div class="form-control">
+			<a href="#" class="form-button">Anchor</a>
+		</div>
+	</div>
+
+	<h2 id="hotdog">Hotdog</h2>
+	<div class="card soft">
+		<div class="form-control">
+			<form class="hotdog">
+				<input type="search" placeholder="Search">
+			</form>
+		</div>
+
+		<div class="form-control">
+			<form class="hotdog dark">
+				<input type="search" placeholder="Search">
+			</form>
+		</div>
+
+		<div class="form-control">
+			<form class="hotdog">
+				<input type="search" placeholder="Search">
+				<input type="submit" class="form-button" value="Search">
+			</form>
+		</div>
+
+		<div class="form-control">
+			<form class="hotdog">
+				<span style="padding-left: 0.5em; color: var(--color-neutral-medium);">🔍</span>
+				<input type="search" placeholder="Search" style="padding-left: 0.5em;">
+			</form>
+		</div>
+
+		<div class="form-control">
+			<form class="hotdog">
+				<input type="search" placeholder="Search">
+				<span style="padding-right: 0.5em; color: var(--color-neutral-medium);">🔍</span>
+			</form>
+		</div>
+	</div>
+
+	<h2 id="select">Select</h2>
+	<div class="card soft">
+		<div class="form-select">
+			<select>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+			</select>
+		</div>
+	</div>
+
+	<h2 id="checkboxes">Check Boxes</h2>
+	<div class="card soft">
+		<h3>Basic Checkbox</h3>
+		<label><input type="checkbox"> Label</label> &nbsp;&nbsp;
+		<label><input type="checkbox" checked> Label</label>
+
+		<h3>Heart Checkbox</h3>
+		<div class="favorite">
+			<input type="checkbox" id="favorite-1" class="favorite-checkbox">
+			<label for="favorite-1" class="favorite-label">&hearts;</label>
+		</div>
+
+		<h3>Toggle</h3>
+		<div class="toggle">
+			<input type="checkbox" id="toggle-1" class="toggle-checkbox">
+			<label for="toggle-1" class="toggle-label"></label>
+		</div>
+	</div>
+</div>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

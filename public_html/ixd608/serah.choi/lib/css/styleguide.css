@@ -57,7 +57,6 @@ a:hover {
 	text-decoration: underline;
 }
 
-/* LAYOUT CLASSES */
 
 .container {
 	max-width: 1200px;
@@ -76,7 +75,6 @@ a:hover {
 .flex-align-center { align-items: center; }
 .flex-justify-center { justify-content: center; }
 
-/* COMPONENT CLASSES */
 
 .nav ul {
 	list-style-type: none !important;
@@ -228,7 +226,6 @@ a:hover {
 	background-attachment: fixed;
 }
 
-/* FIGURE PRODUCT & OVERLAY COMPONENT */
 .figure.product {
 	border-radius: 0.5em;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -268,4 +265,191 @@ a:hover {
 
 .product-overlay:hover figcaption {
 	opacity: 1;
+}
+
+
+/* FORM CONTROLS & BUTTONS */
+.form-control {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.form-button,
+.form-input,
+.form-select,
+.hotdog {
+	display: inline-block;
+	background-color: transparent;
+	border-width: 0;
+	font: inherit;
+	-webkit-appearance: none;
+	color: inherit;
+	width: 100%;
+	outline: 0;
+}
+
+.form-input,
+.form-select,
+.hotdog {
+	padding: 0.5em 1.3em;
+	background-color: var(--color-neutral-light);
+	border-radius: 0.3em;
+	border: 1px solid transparent;
+}
+
+.form-input:focus,
+.form-select:focus,
+.hotdog:focus-within {
+	border-color: var(--color-primary);
+	background-color: var(--color-white);
+}
+
+.form-button {
+	background-color: var(--color-neutral-light);
+	padding: 0.5em 1em;
+	border-radius: 0.3em;
+	cursor: pointer;
+	text-align: center;
+}
+
+.form-button:hover {
+	background-color: var(--color-secondary);
+	color: var(--color-white);
+	text-decoration: none;
+}
+
+
+.hotdog {
+	display: flex;
+	background-color: var(--color-neutral-light);
+	border-radius: 2em;
+	padding: 0.2em 0.5em;
+	align-items: center;
+	width: 100%;
+}
+
+.hotdog.dark {
+	background-color: var(--color-primary);
+	color: var(--color-white);
+}
+
+.hotdog.dark input {
+	color: var(--color-white);
+}
+
+.hotdog.dark input::placeholder {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.hotdog input[type="search"] {
+	flex: 1;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	font: inherit;
+	padding: 0.4em 0.8em;
+	width: 100%;
+	-webkit-appearance: none;
+}
+
+.hotdog .form-button {
+	width: auto;
+	border-radius: 1.5em;
+	padding: 0.4em 1em;
+	margin-left: 0.3em;
+	background-color: var(--color-primary);
+	color: var(--color-white);
+	border: none;
+	cursor: pointer;
+}
+
+.hotdog .form-button:hover {
+	background-color: var(--color-secondary);
+}
+
+
+.form-select {
+	position: relative;
+	cursor: pointer;
+}
+
+.form-select::after {
+	content: '▾';
+	position: absolute;
+	right: 1em;
+	top: 50%;
+	transform: translateY(-50%);
+	pointer-events: none;
+}
+
+.form-select select {
+	width: 100%;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	font: inherit;
+	cursor: pointer;
+	-webkit-appearance: none;
+}
+
+.hidden {
+	display: none;
+}
+
+/* Heart Checkbox */
+.favorite-checkbox {
+	display: none;
+}
+
+.favorite-label {
+	cursor: pointer;
+	font-size: 1.5em;
+	color: var(--color-neutral-medium);
+	transition: color 0.2s ease;
+	user-select: none;
+}
+
+.favorite-checkbox:checked + .favorite-label {
+	color: var(--color-secondary);
+}
+
+/* Toggle Switch */
+.toggle-checkbox {
+	display: none;
+}
+
+.toggle-label {
+	font-size: 1.3em;
+	display: inline-block;
+	width: 2.2em;
+	height: 1.2em;
+	border: 0.1em solid var(--color-neutral-medium);
+	background-color: var(--color-neutral-light);
+	border-radius: 1em;
+	position: relative;
+	cursor: pointer;
+	vertical-align: middle;
+	transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.toggle-label::after {
+	content: '';
+	position: absolute;
+	top: 0.1em;
+	left: 0.1em;
+	width: 0.8em;
+	height: 0.8em;
+	background-color: var(--color-neutral-dark);
+	border-radius: 50%;
+	transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+	background-color: var(--color-primary);
+	border-color: var(--color-primary);
+}
+
+.toggle-checkbox:checked + .toggle-label::after {
+	transform: translateX(1em);
+	background-color: var(--color-white);
 }
