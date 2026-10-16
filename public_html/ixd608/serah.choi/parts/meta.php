@@ -1,0 +1,9 @@
+
+<meta name="viewport" content="width=device-width">
+
+<link rel="stylesheet" href="lib/css/styleguide.css">
+	<link rel="stylesheet" href="css/storetheme.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
