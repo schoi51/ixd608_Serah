@@ -1,0 +1,42 @@
+[
+	{
+		"name": "Serah Choi",
+		"type": "Student",
+		"email": "schoi51@art.edu",
+		"classes":[608,620,750]
+	},
+	{
+		"name": "Phoebe Buffay",
+		"type": "Singer",
+		"email": "phoebe@earthlink.net",
+		"classes":[608,620,750]
+	},
+	{
+		"name": "Joey Tribbiani",
+		"type": "Actor",
+		"email": "jpeytribs@aol.com",
+		"classes":[608,620,750]
+	},
+	{
+		"name": "Chandler Bing",
+		"type": "Who Knows",
+		"email": "bingtastic@yahoo.com",
+		"classes":[608,620,750]
+	},
+	{
+		"name": "Monica Gellar",
+		"type": "Chef",
+		"email": "mgellar1973@hotmail.com",
+		"classes":[608,620,750]
+	},
+
+	{
+		"name": "Lacaphe oh",
+		"type": "Coffee shop",
+		"email": "la1973@hotmail.com",
+		"classes":[608,620,750]
+	}
+
+
+
+]

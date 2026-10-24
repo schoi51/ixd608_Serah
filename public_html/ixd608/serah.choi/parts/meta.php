@@ -1,6 +1,8 @@
 
 <meta name="viewport" content="width=device-width">
 
+<base href="https://serahchoi.net/ixd608/serah.choi/">
+
 <link rel="stylesheet" href="lib/css/styleguide.css">
 	<link rel="stylesheet" href="css/storetheme.css">
 
