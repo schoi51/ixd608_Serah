@@ -28,7 +28,7 @@ if (isset($_POST['id'])) {
         ];
     }
 
-    header("Location: cart.php");
+    header("Location: product_added_to_cart.php?id=" . $product_id . "&amount=" . $product_amount);
     exit;
 }
 
@@ -55,7 +55,7 @@ if (isset($_GET['action'])) {
 
 $conn = makeConn();
 $cart_items = [];
-$total_price = 0;
+$subtotal_price = 0;
 
 if (!empty($_SESSION['cart'])) {
     foreach ($_SESSION['cart'] as $item) {
@@ -76,12 +76,17 @@ if (!empty($_SESSION['cart'])) {
                 $product = $result[0];
                 $product->amount = $amount;
                 $cart_items[] = $product;
-                $total_price += ($product->price * $amount);
+                $subtotal_price += ($product->price * $amount);
             }
         }
     }
 }
 $conn->close();
+
+// 세금 계산 (예: 8.5% 세율 적용, 필요시 비율 수정 가능)
+$tax_rate = 0.085;
+$tax_price = $subtotal_price * $tax_rate;
+$total_price = $subtotal_price + $tax_price;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -194,14 +199,22 @@ $conn->close();
                 <div class="cart-summary">
                     <div class="card soft">
                         <h3 style="font-family: var(--font-serif); font-size: 20px; margin-bottom: 1rem;">Order Summary</h3>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-size: 14px;">
+                        
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; font-size: 14px;">
                             <span style="color: var(--color-muted);">Subtotal</span>
-                            <span style="font-family: var(--font-mono);">$<?php echo number_format($total_price, 2); ?></span>
+                            <span style="font-family: var(--font-mono);">$<?php echo number_format($subtotal_price, 2); ?></span>
                         </div>
+                        
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-size: 14px;">
+                            <span style="color: var(--color-muted);">Taxes (8.5%)</span>
+                            <span style="font-family: var(--font-mono);">$<?php echo number_format($tax_price, 2); ?></span>
+                        </div>
+
                         <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; font-size: 16px; font-weight: bold; border-top: 1px solid #dcd6cd; padding-top: 1rem;">
                             <span>Total</span>
                             <span style="font-family: var(--font-mono); color: var(--color-secondary);">$<?php echo number_format($total_price, 2); ?></span>
                         </div>
+                        
                         <a href="checkout.php" class="form-button primary" style="display: block; text-align: center; padding: 1rem; text-decoration: none;">Proceed to Checkout</a>
                     </div>
                 </div>

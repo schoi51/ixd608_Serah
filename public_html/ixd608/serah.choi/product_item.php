@@ -120,6 +120,21 @@ $main_image = isset($all_images[0]) ? $all_images[0] : '';
             flex: 1;
             min-width: 300px;
         }
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #dcd6cd;
+            background: #fff;
+            margin-top: 0.5rem;
+            margin-bottom: 1.25rem;
+            font-size: 14px;
+        }
+        .form-label {
+            display: block;
+            font-size: 13px;
+            color: var(--color-muted, #666);
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
@@ -178,9 +193,32 @@ $main_image = isset($all_images[0]) ? $all_images[0] : '';
                         <?php echo htmlspecialchars($product->description); ?>
                     </p>
                     
-                    <form action="cart.php" method="POST">
+                    <!-- 폼 액션을 cart.php에서 product_added_to_cart.php로 향하게 변경 -->
+                    <form action="cart.php?action=add-to-cart" method="POST">
                         <input type="hidden" name="id" value="<?php echo htmlspecialchars($product->id); ?>">
-                        <button type="submit" class="form-button primary" style="width: 100%; padding: 1rem; cursor: pointer;">Add To Cart</button>
+                        
+                        <label class="form-label">Amount</label>
+                        <select name="amount" class="form-control">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+
+                        <label class="form-label">Color / Option</label>
+                        <select name="color" class="form-control">
+                            <option value="Natural">Natural</option>
+                            <option value="Walnut">Walnut</option>
+                            <option value="Black">Black</option>
+                        </select>
+
+                        <button type="submit" class="form-button primary" style="width: 100%; padding: 1rem; cursor: pointer; margin-top: 0.5rem;">Add To Cart</button>
                     </form>
                 </div>
 
