@@ -91,7 +91,6 @@ $total_price = $subtotal_price + $tax_price;
         <h2 style="font-family: var(--font-serif); margin-bottom: 2rem;">Checkout</h2>
 
         <?php if ($order_placed): ?>
-            <!-- 주문이 완료된 후 보여줄 화면 (Fake Checkout Success) -->
             <div class="card soft" style="text-align: center; padding: 4rem 2rem;">
                 <h3 style="font-family: var(--font-serif); font-size: 28px; margin-bottom: 1rem;">Thank you for your order!</h3>
                 <p style="color: var(--color-muted); font-size: 16px; margin-bottom: 2rem;">
@@ -109,7 +108,6 @@ $total_price = $subtotal_price + $tax_price;
             <?php else: ?>
                 
                 <div class="checkout-layout">
-                    <!-- 가상의 배송/결제 정보 입력 폼 -->
                     <div class="checkout-form">
                         <div class="card soft">
                             <h3 style="font-family: var(--font-serif); font-size: 20px; margin-bottom: 1.5rem;">Billing & Shipping Information</h3>
@@ -139,7 +137,6 @@ $total_price = $subtotal_price + $tax_price;
                         </div>
                     </div>
 
-                    <!-- 주문 요약 영역 -->
                     <div class="checkout-summary">
                         <div class="card soft">
                             <h3 style="font-family: var(--font-serif); font-size: 20px; margin-bottom: 1rem;">Order Review</h3>
